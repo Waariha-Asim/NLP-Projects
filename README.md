@@ -26,7 +26,7 @@ Question Answering System with Transformers/
 
 
 **Dataset:**  
-[Stanford Question Answering Dataset (SQuAD v1.1) on Kaggle](https://www.kaggle.com/datasets/rajyellow46/wikipedia-qa)  
+[Stanford Question Answering Dataset (SQuAD v1.1) on Kaggle](https://www.kaggle.com/datasets/stanfordu/stanford-question-answering-dataset)  
 
 **Usage:**
 1. Install required packages: `pip install -r requirements.txt`
