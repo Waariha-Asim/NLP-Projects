@@ -71,151 +71,69 @@ A machine learning system to classify news articles into four categories: World,
 3. Upload or input news articles to get category predictions.
 
 ---
+
 # Project 3: Fake News Detection System
 
-A machine learning application that analyzes news articles and classifies them as **Real** or **Fake** using Natural Language Processing and multiple classification models.
+A **Streamlit web app** that classifies news articles as **Real** or **Fake** using multiple NLP models and ensemble learning.
 
 ## Overview
-This system detects misleading or fake news articles by processing text through an NLP pipeline and applying ensemble learning to produce the final prediction.
+The app processes news text and applies three models (**Naive Bayes, Logistic Regression, SVM**) to detect fake news in real-time. Predictions are combined using majority voting for higher accuracy.
 
-## Machine Learning Models
+## Key Features
 
-| Model | Description | Vectorization |
-|------|-------------|---------------|
-| Naive Bayes | Probabilistic classifier based on Bayes' theorem | Count Vectorizer |
-| Logistic Regression | Linear model for binary classification | Count Vectorizer |
-| Support Vector Machine (SVM) | Maximum-margin classifier with a linear kernel | TF-IDF Vectorizer |
-
-**Ensemble Method:**  
-Final predictions are generated using **majority voting** from all three models.
-
-## NLP Pipeline
-
-Raw Text → Lowercasing → Special Character Removal → Stopword Removal → Lemmatization → Vectorization
-
-## Features
-
-- Real-time fake news detection
-- Ensemble prediction using three ML models
-- Confidence score for predictions
-- Word cloud visualization comparing Fake vs Real news
-- Model performance comparison dashboard
-- Sample articles for testing
-- Confusion matrix visualization
-- Radar charts for multi-metric comparison
-- Modern dark UI with glassmorphism design
-
-## Dataset
-
-Dataset: **Fake and Real News Dataset**
-
-Kaggle Link:  
-https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset
-
-Details:
-- 44,000+ news articles
-- Classes: Fake (0) and Real (1)
-- Files used: `Fake.csv` and `True.csv`
-- Feature used: Combined **title and article text**
+- Real-time fake news detection  
+- Ensemble learning with **3 models**  
+- Confidence scoring for predictions  
+- Word cloud visualization and performance dashboard  
 
 ## Model Performance
 
-| Model | Accuracy | Precision | Recall | F1 Score | ROC-AUC |
-|------|----------|-----------|--------|----------|--------|
-| Naive Bayes | ~94% | ~94% | ~94% | ~94% | ~94% |
-| Logistic Regression | ~95% | ~95% | ~95% | ~95% | ~95% |
-| SVM (TF-IDF) | ~95% | ~95% | ~95% | ~95% | ~95% |
+| Model | Accuracy | F1 Score |
+|-------|---------|----------|
+| Naive Bayes | ~94% | ~94% |
+| Logistic Regression | ~95% | ~95% |
+| SVM (TF-IDF) | ~95% | ~95% |
 
-## Technologies Used
-
-- Streamlit
-- Scikit-learn
-- NLTK
-- Pandas and NumPy
-- Plotly, Matplotlib, Seaborn
-- WordCloud
-- Custom CSS for UI design
+**Dataset:** [Fake and Real News Dataset](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset) – 44,000+ articles  
 
 ## How to Run
 
 ```bash
 cd "Fake News Detection System"
-pip install streamlit pandas numpy matplotlib seaborn wordcloud plotly nltk scikit-learn
+pip install -r requirements.txt
 streamlit run fake_news_webapp.py
 ```
 
 ---
+
 # Project 4: Movie Reviews Sentiment Analyzer
 
-A machine learning application that analyzes movie reviews and classifies them as **Positive** or **Negative** using Natural Language Processing techniques.
+A **Streamlit web app** that classifies IMDB movie reviews as **Positive** or **Negative** using multiple machine learning models with ensemble voting.
 
 ## Overview
-This system performs sentiment analysis on IMDB movie reviews using multiple machine learning models combined with ensemble learning to improve prediction accuracy.
+The app preprocesses review text and applies three classifiers (**Naive Bayes, Logistic Regression, SVM**) to predict sentiment in real-time. Ensemble learning improves prediction robustness.
 
-## Machine Learning Models
+## Key Features
 
-| Model | Description | Vectorization |
-|------|-------------|---------------|
-| Naive Bayes | Probabilistic classifier suitable for text classification | Count Vectorizer |
-| Logistic Regression | Linear model with high interpretability | Count Vectorizer |
-| Support Vector Machine (SVM) | Maximum-margin classifier with a linear kernel | TF-IDF Vectorizer |
-
-**Ensemble Method:**  
-Final sentiment prediction is generated using **majority voting across all three models**.
-
-## NLP Pipeline
-
-HTML Removal → Lowercasing → Special Character Removal → Stopword Removal → Lemmatization → Vectorization
-
-## Features
-
-- Real-time sentiment analysis
-- Ensemble prediction using three ML models
-- Confidence score for predictions
-- Word cloud visualization for Positive vs Negative reviews
-- Review length distribution analysis
-- Sample reviews for testing
-- Radar charts for model comparison
-- Interactive performance dashboard
-- Modern full-width UI with navigation tabs
-
-## Dataset
-
-Dataset: **IMDB Movie Reviews Dataset**
-
-Kaggle Link:  
-https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews
-
-Details:
-- 50,000 movie reviews
-- 25,000 positive reviews
-- 25,000 negative reviews
-- File used: `IMDB Dataset.csv`
-- Feature: Raw review text with HTML tags
+- Real-time sentiment prediction  
+- Ensemble of **3 models** with majority voting  
+- Confidence scoring and word cloud visualizations  
+- Review length analysis and performance dashboard  
 
 ## Model Performance
 
-| Model | Accuracy | Precision | Recall | F1 Score | ROC-AUC |
-|------|----------|-----------|--------|----------|--------|
-| Naive Bayes | ~85% | ~85% | ~85% | ~85% | ~85% |
-| Logistic Regression | ~89% | ~89% | ~89% | ~89% | ~89% |
-| SVM (TF-IDF) | ~89% | ~89% | ~89% | ~89% | ~89% |
+| Model | Accuracy | F1 Score |
+|-------|---------|----------|
+| Naive Bayes | ~85% | ~85% |
+| Logistic Regression | ~89% | ~89% |
+| SVM (TF-IDF) | ~89% | ~89% |
 
-## Technologies Used
-
-- Streamlit
-- Scikit-learn
-- NLTK
-- Pandas and NumPy
-- Plotly, Matplotlib, Seaborn
-- WordCloud
-- Custom CSS for UI design
+**Dataset:** [IMDB Movie Reviews Dataset](https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews) – 50,000 reviews  
 
 ## How to Run
 
 ```bash
 cd "Movie Reviews Sentiment Analyzer"
-pip install streamlit pandas numpy matplotlib seaborn wordcloud plotly nltk scikit-learn
+pip install -r requirements.txt
 streamlit run movie_sentiment_analysis_webapp.py
 ```
-
